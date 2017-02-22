@@ -1,18 +1,30 @@
+# Logs and database exports #
 *.log
-wp-config.php
-wp-content/advanced-cache.php
-wp-content/backup-db/
-wp-content/backups/
-wp-content/blogs.dir/
-wp-content/cache/
-wp-content/upgrade/
-wp-content/uploads/
-wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+*.sql
+*.sqlite
+npm-debug.log*
+.node_repl_history
 
-/.htaccess
-/license.txt
-/readme.html
-/sitemap.xml
-/sitemap.xml.gz
+# Configuration #
+.lock-wscript
+*.env
 
+# Build system and packages #
+node_modules
+jspm_packages
+.grunt
+.npm
+
+# OS generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Runtime data #
+pids
+*.pid
+*.seed

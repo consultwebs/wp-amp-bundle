@@ -9,13 +9,14 @@ npm-debug.log*
 .lock-wscript
 *.env
 
-# Build system and packages #
+# Build system, packages, version control, etc #
 node_modules
 jspm_packages
 .grunt
 .npm
+.git
 
-# OS generated files #
+# OS generated files, hidden files, etc #
 .DS_Store
 .DS_Store?
 ._*

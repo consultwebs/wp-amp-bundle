@@ -343,358 +343,358 @@ Redux::setArgs( "redux_builder_amp", $args );
 
 
     // AMP GTM SECTION
-   Redux::setSection( $opt_name,    array(
-      	        'title' => __('Analytics'),
-      	        // 'icon' => 'el el-th-large',
-      			    'desc'  => 'You can either use Google Tag Manager or Other Analytics Providers',
-                'subsection' => true,
-      	        'fields' =>
-      	        	array(
-
-
-                    array(
-                        'id'       => 'amp-analytics-select-option',
-                        'type'     => 'select',
-                        'title'    => __( 'Analytics Type', 'redux-framework-demo' ),
-                        'subtitle' => __( 'Select your Analytics provider.', 'redux-framework-demo' ),
-                        'options'  => array(
-                            '1' => __('Google Analytics', 'redux-framework-demo' ),
-                            '2' => __('Segment Analytics', 'redux-framework-demo' ),
-                            '3' => __('Piwik Analytics', 'redux-framework-demo' ),
-                            '4' => __('Quantcast Measurement', 'redux-framework-demo' ),
-                            '5' => __('comScore', 'redux-framework-demo' ),
-                        ),
-                        'required' => array(
-                          array('amp-use-gtm-option', '=' , '0'),
-                        ),
-                        'default'  => '1',
-                    ),
-                      array(
-                          'id'       => 'ga-feild',
-                          'type'     => 'text',
-                          'title'    => __( 'Google Analytics', 'redux-framework-demo' ),
-                          'required' => array(
-                            array('amp-use-gtm-option', '=' , '0'),
-                            array('amp-analytics-select-option', '=' , '1')
-                          ),
-                          'subtitle' => __( 'Enter your Google Analytics ID.', 'redux-framework-demo' ),
-                          'desc'     => __('Example: UA-XXXXX-Y', 'redux-framework-demo' ),
-                          'default'  => 'UA-XXXXX-Y',
-                      ),
-                      array(
-                        'id'       => 'sa-feild',
-                        'type'     => 'text',
-                        'title'    => __( 'Segment Analytics', 'redux-framework-demo' ),
-                        'subtitle' => __( 'Enter your Segment Analytics Key.', 'redux-framework-demo' ),
-                        'required' => array(
-                          array('amp-use-gtm-option', '=' , '0'),
-                          array('amp-analytics-select-option', '=' , '2')
-                        ),
-                        'default'  => 'SEGMENT-WRITE-KEY',
-                      ),
-                      array(
-                          'id'       => 'pa-feild',
-                          'type'     => 'text',
-                          'title'    => __( 'Piwik Analytics', 'redux-framework-demo' ),
-                          'required' => array(
-                            array('amp-use-gtm-option', '=' , '0'),
-                            array('amp-analytics-select-option', '=' , '3')
-                          ),
-                          'desc'     => __( 'Example: https://piwik.example.org/piwik.php?idsite=YOUR_SITE_ID&rec=1&action_name=TITLE&urlref=DOCUMENT_REFERRER&url=CANONICAL_URL&rand=RANDOM', 'redux-framework-demo' ),
-                          'subtitle' => __('Enter your Piwik Analytics URL.', 'redux-framework-demo' ),
-                          'default'  => '#',
-                      ),
-
-                      array(
-                        'id'        	=>'amp-quantcast-analytics-code',
-                        'type'      	=> 'text',
-                        'title'     	=> __('p-code'),
-                        'default'   	=> '',
-                        'required' => array(
-                        array('amp-analytics-select-option', '=' , '4')),
-                      ),
-                      array(
-                        'id'        	=>'amp-comscore-analytics-code-c1',
-                        'type'      	=> 'text',
-                        'title'     	=> __('C1'),
-                        'default'   	=> 1,
-                        'required' => array(
-                        array('amp-analytics-select-option', '=' , '5')),
-                      ),
-                      array(
-                        'id'        	=>'amp-comscore-analytics-code-c2',
-                        'type'      	=> 'text',
-                        'title'     	=> __('C2'),
-                        'default'   	=> '',
-                        'required' => array(
-                        array('amp-analytics-select-option', '=' , '5')),
-                      ),
-
-                      //GTM
-                        array(
-                            'id'       => 'amp-use-gtm-option',
-                            'type'     => 'switch',
-                            'title'    => __( 'Use Google Tag Manager', 'redux-framework-demo' ),
-                            'subtitle' => __( 'Select your Analytics provider.', 'redux-framework-demo' ),
-                            'default'  => 0,
-                        ),
-                        array(
-              						'id'        	=>'amp-gtm-id',
-              						'type'      	=> 'text',
-              						'title'     	=> __('Tag Manager ID (Container ID)'),
-              						'default'   	=> '',
-              						'desc'	=> 'Eg: GTM-5XXXXXP',
-                        //  'validate' => 'not_empty',
-                          'required' => array(
-                            array('amp-use-gtm-option', '=' , '1')
-                          ),
-              					),
-              					array(
-              						'id'        	=>'amp-gtm-analytics-type',
-              						'type'      	=> 'text',
-              						'title'     	=> __('Analytics Type'),
-              						'default'   	=> '',
-              						'desc'	=> 'Eg: googleanalytics',
-                         // 'validate' => 'not_empty',
-                          'required' => array(
-                            array('amp-use-gtm-option', '=' , '1')
-                          ),
-              					),
-              					array(
-              						'id'        	=>'amp-gtm-analytics-code',
-              						'type'      	=> 'text',
-              						'title'     	=> __('Analytics ID'),
-              						'default'   	=> '',
-      						        'desc'	=> 'Eg: UA-XXXXXX-Y',
-                          // 'validate' => 'not_empty',
-                          'required' => array(
-                          array('amp-use-gtm-option', '=' , '1')),
-              					),
-
-      				    )
-          	)
-   );
+  //  Redux::setSection( $opt_name,    array(
+  //     	        'title' => __('Analytics'),
+  //     	        // 'icon' => 'el el-th-large',
+  //     			    'desc'  => 'You can either use Google Tag Manager or Other Analytics Providers',
+  //               'subsection' => true,
+  //     	        'fields' =>
+  //     	        	array(
+   //
+   //
+  //                   array(
+  //                       'id'       => 'amp-analytics-select-option',
+  //                       'type'     => 'select',
+  //                       'title'    => __( 'Analytics Type', 'redux-framework-demo' ),
+  //                       'subtitle' => __( 'Select your Analytics provider.', 'redux-framework-demo' ),
+  //                       'options'  => array(
+  //                           '1' => __('Google Analytics', 'redux-framework-demo' ),
+  //                           '2' => __('Segment Analytics', 'redux-framework-demo' ),
+  //                           '3' => __('Piwik Analytics', 'redux-framework-demo' ),
+  //                           '4' => __('Quantcast Measurement', 'redux-framework-demo' ),
+  //                           '5' => __('comScore', 'redux-framework-demo' ),
+  //                       ),
+  //                       'required' => array(
+  //                         array('amp-use-gtm-option', '=' , '0'),
+  //                       ),
+  //                       'default'  => '1',
+  //                   ),
+  //                     array(
+  //                         'id'       => 'ga-feild',
+  //                         'type'     => 'text',
+  //                         'title'    => __( 'Google Analytics', 'redux-framework-demo' ),
+  //                         'required' => array(
+  //                           array('amp-use-gtm-option', '=' , '0'),
+  //                           array('amp-analytics-select-option', '=' , '1')
+  //                         ),
+  //                         'subtitle' => __( 'Enter your Google Analytics ID.', 'redux-framework-demo' ),
+  //                         'desc'     => __('Example: UA-XXXXX-Y', 'redux-framework-demo' ),
+  //                         'default'  => 'UA-XXXXX-Y',
+  //                     ),
+  //                     array(
+  //                       'id'       => 'sa-feild',
+  //                       'type'     => 'text',
+  //                       'title'    => __( 'Segment Analytics', 'redux-framework-demo' ),
+  //                       'subtitle' => __( 'Enter your Segment Analytics Key.', 'redux-framework-demo' ),
+  //                       'required' => array(
+  //                         array('amp-use-gtm-option', '=' , '0'),
+  //                         array('amp-analytics-select-option', '=' , '2')
+  //                       ),
+  //                       'default'  => 'SEGMENT-WRITE-KEY',
+  //                     ),
+  //                     array(
+  //                         'id'       => 'pa-feild',
+  //                         'type'     => 'text',
+  //                         'title'    => __( 'Piwik Analytics', 'redux-framework-demo' ),
+  //                         'required' => array(
+  //                           array('amp-use-gtm-option', '=' , '0'),
+  //                           array('amp-analytics-select-option', '=' , '3')
+  //                         ),
+  //                         'desc'     => __( 'Example: https://piwik.example.org/piwik.php?idsite=YOUR_SITE_ID&rec=1&action_name=TITLE&urlref=DOCUMENT_REFERRER&url=CANONICAL_URL&rand=RANDOM', 'redux-framework-demo' ),
+  //                         'subtitle' => __('Enter your Piwik Analytics URL.', 'redux-framework-demo' ),
+  //                         'default'  => '#',
+  //                     ),
+   //
+  //                     array(
+  //                       'id'        	=>'amp-quantcast-analytics-code',
+  //                       'type'      	=> 'text',
+  //                       'title'     	=> __('p-code'),
+  //                       'default'   	=> '',
+  //                       'required' => array(
+  //                       array('amp-analytics-select-option', '=' , '4')),
+  //                     ),
+  //                     array(
+  //                       'id'        	=>'amp-comscore-analytics-code-c1',
+  //                       'type'      	=> 'text',
+  //                       'title'     	=> __('C1'),
+  //                       'default'   	=> 1,
+  //                       'required' => array(
+  //                       array('amp-analytics-select-option', '=' , '5')),
+  //                     ),
+  //                     array(
+  //                       'id'        	=>'amp-comscore-analytics-code-c2',
+  //                       'type'      	=> 'text',
+  //                       'title'     	=> __('C2'),
+  //                       'default'   	=> '',
+  //                       'required' => array(
+  //                       array('amp-analytics-select-option', '=' , '5')),
+  //                     ),
+   //
+  //                     //GTM
+  //                       array(
+  //                           'id'       => 'amp-use-gtm-option',
+  //                           'type'     => 'switch',
+  //                           'title'    => __( 'Use Google Tag Manager', 'redux-framework-demo' ),
+  //                           'subtitle' => __( 'Select your Analytics provider.', 'redux-framework-demo' ),
+  //                           'default'  => 0,
+  //                       ),
+  //                       array(
+  //             						'id'        	=>'amp-gtm-id',
+  //             						'type'      	=> 'text',
+  //             						'title'     	=> __('Tag Manager ID (Container ID)'),
+  //             						'default'   	=> '',
+  //             						'desc'	=> 'Eg: GTM-5XXXXXP',
+  //                       //  'validate' => 'not_empty',
+  //                         'required' => array(
+  //                           array('amp-use-gtm-option', '=' , '1')
+  //                         ),
+  //             					),
+  //             					array(
+  //             						'id'        	=>'amp-gtm-analytics-type',
+  //             						'type'      	=> 'text',
+  //             						'title'     	=> __('Analytics Type'),
+  //             						'default'   	=> '',
+  //             						'desc'	=> 'Eg: googleanalytics',
+  //                        // 'validate' => 'not_empty',
+  //                         'required' => array(
+  //                           array('amp-use-gtm-option', '=' , '1')
+  //                         ),
+  //             					),
+  //             					array(
+  //             						'id'        	=>'amp-gtm-analytics-code',
+  //             						'type'      	=> 'text',
+  //             						'title'     	=> __('Analytics ID'),
+  //             						'default'   	=> '',
+  //     						        'desc'	=> 'Eg: UA-XXXXXX-Y',
+  //                         // 'validate' => 'not_empty',
+  //                         'required' => array(
+  //                         array('amp-use-gtm-option', '=' , '1')),
+  //             					),
+   //
+  //     				    )
+  //         	)
+  //  );
 
 
 //code for fetching ctegories to show as a list in redux settings
-   $categories = get_categories( array(
-                                      'orderby' => 'name',
-                                      'order'   => 'ASC'
-                                      ) );
-  $categories_array = array();
-   if ( $categories ) :
-   foreach ($categories as $cat ) {
-     $cat_id = $cat->cat_ID;
-     $key = "".$cat_id;
-     //building assosiative array of ID-cat_name
-     $categories_array[ $key ] = $cat->name;
-    }
-    endif;
-    //End of code for fetching ctegories to show as a list in redux settings
-
-    function ampforwp_get_element_default_color() {
-        $default_value = get_option('redux_builder_amp', true);
-        $default_value = $default_value['amp-opt-color-rgba-colorscheme']['color'];
-        if ( empty( $default_value ) ) {
-          $default_value = '#333';
-        }
-      return $default_value;
-    }
+  //  $categories = get_categories( array(
+  //                                     'orderby' => 'name',
+  //                                     'order'   => 'ASC'
+  //                                     ) );
+  // $categories_array = array();
+  //  if ( $categories ) :
+  //  foreach ($categories as $cat ) {
+  //    $cat_id = $cat->cat_ID;
+  //    $key = "".$cat_id;
+  //    //building assosiative array of ID-cat_name
+  //    $categories_array[ $key ] = $cat->name;
+  //   }
+  //   endif;
+  //   //End of code for fetching ctegories to show as a list in redux settings
+  //
+  //   function ampforwp_get_element_default_color() {
+  //       $default_value = get_option('redux_builder_amp', true);
+  //       $default_value = $default_value['amp-opt-color-rgba-colorscheme']['color'];
+  //       if ( empty( $default_value ) ) {
+  //         $default_value = '#333';
+  //       }
+  //     return $default_value;
+  //   }
 
     // AMP Design SECTION
-   Redux::setSection( $opt_name, array(
-       'title'      => __( 'Design', 'redux-framework-demo' ),
-       'desc'       => __( '
-       <br /><a href="' . esc_url(admin_url('customize.php?autofocus[section]=amp_design&customize_amp=1')) .'"  target="_blank"><img class="ampforwp-post-builder-img" src="'.AMPFORWP_IMAGE_DIR . '/amp-post-builder.png" width="489" height="72" /></a>
-       '),
-       'id'         => 'amp-design',
-       'subsection' => true,
-        'fields'     => array(
-
-            $fields =  array(
-                'id'       => 'amp-design-selector',
-                'type'     => 'select',
-                'title'    => __( 'Design Selector', 'redux-framework-demo' ),
-                'subtitle' => __( 'Select your design.', 'redux-framework-demo' ),
-                'options'  => array(
-                    '1' => __('Design One', 'redux-framework-demo' ),
-                    '2' => __('Design Two', 'redux-framework-demo' ),
-                    '3' => __('Design Three', 'redux-framework-demo' )
-                ),
-                'default'  => '2'
-            ),
-            array(
-                'id'        => 'amp-opt-color-rgba-colorscheme',
-                'type'      => 'color_rgba',
-                'title'     => 'Color Scheme',
-                'default'   => array(
-                    'color'     => '#F42F42',
-                ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '3')
-                )
-              ),
-            array(
-                'id'        => 'amp-opt-color-rgba-headercolor',
-                'type'      => 'color_rgba',
-                'title'     => 'Header Background Color',
-                'default'   => array(
-                    'color'     => '#FFFFFF',
-                ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '3')
-                )
-              ),
-            array(
-                    'id'        => 'amp-opt-color-rgba-font',
-                    'type'      => 'color_rgba',
-                    'title'     => 'Color Scheme Font Color',
-                    'default'   => array(
-                        'color'     => '#fff',
-                    ),
-                    'required' => array(
-                      array('amp-design-selector', '=' , '3')
-                 )
-              ),
-            array(
-                    'id'        => 'amp-opt-color-rgba-headerelements',
-                    'type'      => 'color_rgba',
-                    'title'     => 'Header Elements Color',
-                    'default'   => array(
-                        'color'     => ampforwp_get_element_default_color(),
-                    ),
-                    'required' => array(
-                      array('amp-design-selector', '=' , '3')
-                 )
-             ),
-
-
-          array(
-                     'id'       => 'amp-design-3-featured-slider',
-                     'type'     => 'switch',
-                     'title'    => __( 'Featured Slider', 'redux-framework-demo' ),
-                     'required' => array(
-                        array('amp-design-selector', '=' , '3')
-                     ),
-                     'default'  => '1'
-                 ),
-             array(
-                'id'       => 'amp-design-3-category-selector',
-                'type'     => 'select',
-                'title'    => __( 'Featured Slider Category', 'redux-framework-demo' ),
-                'options'  => $categories_array,
-                'required' => array(
-                  array('amp-design-selector', '=' , '3'),
-                  array('amp-design-3-featured-slider', '=' , '1')
-                ),
-            ),
-             array(
-                'id'       => 'amp-design-3-search-feature',
-                'type'     => 'switch',
-                'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
-                'title'    => __( 'Search', 'redux-framework-demo' ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '3')
-                ),
-                'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
-                'default'  => '0'
-            ),
-
-             array(
-                'id'       => 'amp-design-2-search-feature',
-                'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
-                'type'     => 'switch',
-                'title'    => __( 'Search', 'redux-framework-demo' ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '2')
-                ),
-                'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
-                'default'  => '0'
-            ),
-
-             array(
-                'id'       => 'amp-design-1-search-feature',
-                'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
-                'type'     => 'switch',
-                'title'    => __( 'Search', 'redux-framework-demo' ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '1')
-                ),
-                'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
-                'default'  => '0'
-            ),
-    // Call Now button
-    array(
-        'id'       => 'ampforwp-callnow-button',
-        'type'     => 'switch',
-        'title'    => __('Call Now Button', 'redux-framework-demo'),
-        'true'      => 'true',
-        'false'     => 'false',
-        'default'   => 0
-    ),
-    array(
-        'id'        =>'enable-amp-call-numberfield',
-        'type'      => 'text',
-        'required'  => array('ampforwp-callnow-button', '=' , '1'),
-        'title'     => __('Enter Phone Number', 'redux-framework-demo'),
-        'default'   => '',
-    ),
-    array(
-        'id'        => 'amp-opt-color-rgba-colorscheme-call',
-        'type'      => 'color_rgba',
-        'title'     => 'Call Button Color',
-        'default'   => array(
-            'color'     => '#0a89c0',
-        ),
-        'required' => array(
-          array('ampforwp-callnow-button', '=' , '1')
-        )
-    ),
-            
-             array(
-                'id'       => 'amp-design-3-credit-link',
-                'type'     => 'switch',
-                'title'    => __( 'Credit link', 'redux-framework-demo' ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '3')
-                ),
-                'default'  => '1'
-            ),
-             array(
-                'id'       => 'amp-design-3-author-description',
-                'type'     => 'switch',
-                'title'    => __( 'Author Bio in Single', 'redux-framework-demo' ),
-                'required' => array(
-                  array('amp-design-selector', '=' , '3')
-                ),
-                'default'  => '1'
-            ),
-            array(
-               'id'       => 'amp-design-3-date-feature',
-               'type'     => 'switch',
-               'title'    => __( 'Display Date on Single', 'redux-framework-demo' ),
-               'required' => array(
-                 array('amp-design-selector', '=' , '3')
-               ),
-               'desc'     => __('Display date along with author and category', 'redux-framework-demo' ),
-               'default'  => '0'
-           ),
-
-        array(
-            'id'       => 'css_editor',
-            'type'     => 'ace_editor',
-            'title'    => __('Custom CSS', 'redux-framework-demo'),
-            'subtitle' => __('You can customize the Stylesheet of the AMP version by using this option.', 'redux-framework-demo'),
-            'mode'     => 'css',
-            'theme'    => 'monokai',
-            'desc'     => '',
-            'default'  => "/******* Paste your Custom CSS in this Editor *******/"
-        ),
-        )
-
-   )
-
-   );
+  //  Redux::setSection( $opt_name, array(
+  //      'title'      => __( 'Design', 'redux-framework-demo' ),
+  //      'desc'       => __( '
+  //      <br /><a href="' . esc_url(admin_url('customize.php?autofocus[section]=amp_design&customize_amp=1')) .'"  target="_blank"><img class="ampforwp-post-builder-img" src="'.AMPFORWP_IMAGE_DIR . '/amp-post-builder.png" width="489" height="72" /></a>
+  //      '),
+  //      'id'         => 'amp-design',
+  //      'subsection' => true,
+  //       'fields'     => array(
+   //
+  //           $fields =  array(
+  //               'id'       => 'amp-design-selector',
+  //               'type'     => 'select',
+  //               'title'    => __( 'Design Selector', 'redux-framework-demo' ),
+  //               'subtitle' => __( 'Select your design.', 'redux-framework-demo' ),
+  //               'options'  => array(
+  //                   '1' => __('Design One', 'redux-framework-demo' ),
+  //                   '2' => __('Design Two', 'redux-framework-demo' ),
+  //                   '3' => __('Design Three', 'redux-framework-demo' )
+  //               ),
+  //               'default'  => '2'
+  //           ),
+  //           array(
+  //               'id'        => 'amp-opt-color-rgba-colorscheme',
+  //               'type'      => 'color_rgba',
+  //               'title'     => 'Color Scheme',
+  //               'default'   => array(
+  //                   'color'     => '#F42F42',
+  //               ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3')
+  //               )
+  //             ),
+  //           array(
+  //               'id'        => 'amp-opt-color-rgba-headercolor',
+  //               'type'      => 'color_rgba',
+  //               'title'     => 'Header Background Color',
+  //               'default'   => array(
+  //                   'color'     => '#FFFFFF',
+  //               ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3')
+  //               )
+  //             ),
+  //           array(
+  //                   'id'        => 'amp-opt-color-rgba-font',
+  //                   'type'      => 'color_rgba',
+  //                   'title'     => 'Color Scheme Font Color',
+  //                   'default'   => array(
+  //                       'color'     => '#fff',
+  //                   ),
+  //                   'required' => array(
+  //                     array('amp-design-selector', '=' , '3')
+  //                )
+  //             ),
+  //           array(
+  //                   'id'        => 'amp-opt-color-rgba-headerelements',
+  //                   'type'      => 'color_rgba',
+  //                   'title'     => 'Header Elements Color',
+  //                   'default'   => array(
+  //                       'color'     => ampforwp_get_element_default_color(),
+  //                   ),
+  //                   'required' => array(
+  //                     array('amp-design-selector', '=' , '3')
+  //                )
+  //            ),
+   //
+   //
+  //         array(
+  //                    'id'       => 'amp-design-3-featured-slider',
+  //                    'type'     => 'switch',
+  //                    'title'    => __( 'Featured Slider', 'redux-framework-demo' ),
+  //                    'required' => array(
+  //                       array('amp-design-selector', '=' , '3')
+  //                    ),
+  //                    'default'  => '1'
+  //                ),
+  //            array(
+  //               'id'       => 'amp-design-3-category-selector',
+  //               'type'     => 'select',
+  //               'title'    => __( 'Featured Slider Category', 'redux-framework-demo' ),
+  //               'options'  => $categories_array,
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3'),
+  //                 array('amp-design-3-featured-slider', '=' , '1')
+  //               ),
+  //           ),
+  //            array(
+  //               'id'       => 'amp-design-3-search-feature',
+  //               'type'     => 'switch',
+  //               'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
+  //               'title'    => __( 'Search', 'redux-framework-demo' ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3')
+  //               ),
+  //               'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
+  //               'default'  => '0'
+  //           ),
+   //
+  //            array(
+  //               'id'       => 'amp-design-2-search-feature',
+  //               'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
+  //               'type'     => 'switch',
+  //               'title'    => __( 'Search', 'redux-framework-demo' ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '2')
+  //               ),
+  //               'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
+  //               'default'  => '0'
+  //           ),
+   //
+  //            array(
+  //               'id'       => 'amp-design-1-search-feature',
+  //               'subtitle' => __('HTTPS is mandatory for Search', 'redux-framework-demo'),
+  //               'type'     => 'switch',
+  //               'title'    => __( 'Search', 'redux-framework-demo' ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '1')
+  //               ),
+  //               'desc'     => __('HTTPS is required for search to work on AMP pages.', 'redux-framework-demo' ),
+  //               'default'  => '0'
+  //           ),
+  //   // Call Now button
+  //   array(
+  //       'id'       => 'ampforwp-callnow-button',
+  //       'type'     => 'switch',
+  //       'title'    => __('Call Now Button', 'redux-framework-demo'),
+  //       'true'      => 'true',
+  //       'false'     => 'false',
+  //       'default'   => 0
+  //   ),
+  //   array(
+  //       'id'        =>'enable-amp-call-numberfield',
+  //       'type'      => 'text',
+  //       'required'  => array('ampforwp-callnow-button', '=' , '1'),
+  //       'title'     => __('Enter Phone Number', 'redux-framework-demo'),
+  //       'default'   => '',
+  //   ),
+  //   array(
+  //       'id'        => 'amp-opt-color-rgba-colorscheme-call',
+  //       'type'      => 'color_rgba',
+  //       'title'     => 'Call Button Color',
+  //       'default'   => array(
+  //           'color'     => '#0a89c0',
+  //       ),
+  //       'required' => array(
+  //         array('ampforwp-callnow-button', '=' , '1')
+  //       )
+  //   ),
+  //
+  //            array(
+  //               'id'       => 'amp-design-3-credit-link',
+  //               'type'     => 'switch',
+  //               'title'    => __( 'Credit link', 'redux-framework-demo' ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3')
+  //               ),
+  //               'default'  => '1'
+  //           ),
+  //            array(
+  //               'id'       => 'amp-design-3-author-description',
+  //               'type'     => 'switch',
+  //               'title'    => __( 'Author Bio in Single', 'redux-framework-demo' ),
+  //               'required' => array(
+  //                 array('amp-design-selector', '=' , '3')
+  //               ),
+  //               'default'  => '1'
+  //           ),
+  //           array(
+  //              'id'       => 'amp-design-3-date-feature',
+  //              'type'     => 'switch',
+  //              'title'    => __( 'Display Date on Single', 'redux-framework-demo' ),
+  //              'required' => array(
+  //                array('amp-design-selector', '=' , '3')
+  //              ),
+  //              'desc'     => __('Display date along with author and category', 'redux-framework-demo' ),
+  //              'default'  => '0'
+  //          ),
+   //
+  //       array(
+  //           'id'       => 'css_editor',
+  //           'type'     => 'ace_editor',
+  //           'title'    => __('Custom CSS', 'redux-framework-demo'),
+  //           'subtitle' => __('You can customize the Stylesheet of the AMP version by using this option.', 'redux-framework-demo'),
+  //           'mode'     => 'css',
+  //           'theme'    => 'monokai',
+  //           'desc'     => '',
+  //           'default'  => "/******* Paste your Custom CSS in this Editor *******/"
+  //       ),
+  //       )
+   //
+  //  )
+   //
+  //  );
 
    // SEO SECTION
   Redux::setSection( $opt_name, array(

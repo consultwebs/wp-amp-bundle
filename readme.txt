@@ -1,5 +1,5 @@
 === WP AMP Bundle ===
-Contributors: consultwebs, derekseymour, mohammed_kaludi, ahmedkaludi, ampforwp, batmoo, joen, automattic, potatomaster
+Contributors: consultwebs, derekseymour, migexe, mohammed_kaludi, ahmedkaludi, ampforwp, batmoo, joen, automattic, potatomaster
 Tags: amp, accelerated mobile pages, seo, mobile, legal, plugin
 Requires at least: 4.4
 Tested up to: 4.7
@@ -15,6 +15,14 @@ Accelerated Mobile Pages (AMP) for Professional WordPress Sites.
 == Frequently Asked Questions ==
 
 == Changelog ==
+
+= 0.2.0 (2017-05-26) =
+* Added new AMP menu & UI to WP admin area
+* Added AMP validator
+* Added Glue for Yoast SEO & AMP plugin
+* Added AMP call tracking & CallTrackingMetrics integration
+* Updated included plugin versions
+* Various misc changes
 
 = 0.1.0 (2017-02-23) =
 * Initial version

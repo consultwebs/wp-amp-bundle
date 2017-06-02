@@ -64,9 +64,9 @@ if ( is_customize_preview() ) {
 add_action('pre_amp_render_post','ampforwp_design_selector', 11 );
 function ampforwp_design_selector() {
 
-    global $redux_builder_amp;
-    if ( $redux_builder_amp ) {
-        return $redux_builder_amp['amp-design-selector'];
+    global $wp_amp_bundle_admin;
+    if ( $wp_amp_bundle_admin ) {
+        return $wp_amp_bundle_admin['amp-design-selector'];
     } else {
         return 2;
     }
@@ -78,13 +78,13 @@ add_action('pre_amp_render_post','ampforwp_stylesheet_file_insertion', 12 );
 function ampforwp_stylesheet_file_insertion() {
 
         if ( ! ampforwp_design_selector() ) {
-          $ampforwp_design_selector   = 2;
+          $wp_amp_bundle_admin   = 2;
         } else {
-          $ampforwp_design_selector  = ampforwp_design_selector();
+          $wp_amp_bundle_admin  = ampforwp_design_selector();
         }
 
         // Add StyleSheet
-        require AMPFORWP_PLUGIN_DIR . 'templates/design-manager/design-'. $ampforwp_design_selector . '/style.php';
+        require AMPFORWP_PLUGIN_DIR . 'templates/design-manager/design-'. $wp_amp_bundle_admin . '/style.php';
 }
 
 // Post Title

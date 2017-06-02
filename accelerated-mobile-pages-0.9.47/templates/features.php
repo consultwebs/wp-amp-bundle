@@ -353,6 +353,15 @@ define('AMPFORWP_COMMENTS_PER_PAGE', $redux_builder_amp['ampforwp-number-of-comm
 		return $data;
 	}
 
+	add_action('amp_post_template_head','ampforwp_register_call_tracking_script', 21);
+	function ampforwp_register_call_tracking_script(){
+		$wp_amp_bundle_admin = get_option('wp_amp_bundle_admin');
+		if ($wp_amp_bundle_admin['ampforwp-callnow-button']){?>
+		<script async custom-element="amp-call-tracking" src="https://cdn.ampproject.org/v0/amp-call-tracking-0.1.js"></script>
+		<?php
+		}
+	}
+
 	// 7. Footer for AMP Pages
 	add_filter( 'amp_post_template_file', 'ampforwp_custom_footer', 10, 3 );
 	function ampforwp_custom_footer( $file, $type, $post ) {
@@ -1892,7 +1901,7 @@ Examples:
 		 // initializing these to avoid debug errors
 		 global $redux_builder_amp;
 		 global $woocommerce;
-		 
+
 		 if( !class_exists( 'WooCommerce' ) ){
 			 return;
 		 }
@@ -2077,9 +2086,9 @@ function ampforwp_meta_description() {
 // Call Feature
 add_action('ampforwp_call_button','ampforwp_call_button_html_output');
 function ampforwp_call_button_html_output(){
-global $redux_builder_amp;
-if ($redux_builder_amp['ampforwp-callnow-button']) {
+$wp_amp_bundle_admin = get_option('wp_amp_bundle_admin');
+if ($wp_amp_bundle_admin['ampforwp-callnow-button'] && $wp_amp_bundle_admin['wp-amp-bundle-admin-call-tracking-integration-tracking-number']) {
 ?>
-<div class="callnow"><a href="tel:<?php echo $redux_builder_amp['enable-amp-call-numberfield']; ?>"></a></div>
+<div class="callnow"><amp-call-tracking config="https://<?php echo $wp_amp_bundle_admin["wp-amp-bundle-admin-call-tracking-integration-account"]; ?>.tctm.co/t.js"><a href="tel:<?php echo $wp_amp_bundle_admin['wp-amp-bundle-admin-call-tracking-integration-tracking-number']; ?>"></a></amp-call-tracking></div>
 <?php }
  }

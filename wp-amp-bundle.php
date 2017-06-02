@@ -3,8 +3,8 @@
 Plugin Name: WP AMP Bundle
 Plugin URI: https://github.com/consultwebs/wp-amp-bundle
 Description: Accelerated Mobile Pages (AMP) for Professional WordPress Sites
-Version: 0.2.0-alpha
-Author: Consultwebs, Derek Seymour
+Version: 0.2.0
+Author: Consultwebs, Derek Seymour, Miguel Vega
 Author URI: https://www.consultwebs.com/
 License: GPLv2 or later
 
@@ -36,13 +36,13 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 		class WPAMPBundle {
 
 			// Properties
-			public $version = '0.2.0-alpha';
+			public $version = '0.2.0';
 			public $schema = '20170322';
 			public $amp_wp_plugin_dir_name = 'amp-wp-0.4.2';
 			public $accelerated_mobile_pages_plugin_dir_name = 'accelerated-mobile-pages-0.9.47';
 			public $glue_yoast_amp_plugin_dir_name = 'yoastseo-amp-0.4.2';
 			public $admin_dir_name = 'admin';
-			
+
 			// Constructor
 			function __construct() {
 
@@ -55,17 +55,17 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 				// Register actions, filters, hooks
 				add_action('init',                      array($this, 'action_init'));
-				register_activation_hook(__FILE__,      array($this, 'hook_register_activation_hook'));
-				register_deactivation_hook(__FILE__,	array($this, 'hook_register_deactivation_hook'));
+				register_activation_hook(__FILE__,      array($this, 'register_activation_hook'));
+				register_deactivation_hook(__FILE__,	array($this, 'register_deactivation_hook'));
 			}
-			
-			// Handles the 'init' action       
+
+			// Handles the 'init' action
 			function action_init() {
 
 				// Check plugin version
 				$version = get_option('wp_amp_bundle_version', false);
 				if( ( $version !== false && $version != $this->version ) ) {
-					
+
 					// Perform any upgrades needed
 
 					// Update version in database
@@ -75,33 +75,38 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 					// Add version to database
 					add_option('wp_amp_bundle_version', $this->version);
 				}
-				
+
 				// Check plugin schema
 				$schema = get_option('wp_amp_bundle_schema', false);
 				if( $schema !== false && (int) $schema > 0 && (int) $schema < (int) $this->schema ) {
-					
+
 					// Perform any schema upgrades needed
 
 					// Update schema version in database
 					update_option('wp_amp_bundle_schema', $this->schema);
 				} elseif( $schema === false ) {
-				
+
 					// Add schema version to database
 					add_option('wp_amp_bundle_schema', $this->schema);
 				}
+
+				// Flushes permalinks
+				flush_rewrite_rules();
 			}
 
 			// Handles the 'activation' hook
-			function hook_register_activation_hook() {
-
+			function register_activation_hook() {
 			}
-			
+
 			// Handles the 'deactivation' hook
-			function hook_register_deactivation_hook() {
+			function register_deactivation_hook() {
 
 				// Remove plugin data from database
 				delete_option('wp_amp_bundle_schema');
 				delete_option('wp_amp_bundle_version');
+
+				// Flushes permalinks
+				flush_rewrite_rules();
 			}
 		}
 	}
@@ -109,7 +114,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 	// Initialize plugin
 	if( !defined('WPAMPBUNDLE') ) {
 		$wp_amp_bundle = new WPAMPBundle();
-		
+
 		// Load admin interface
 		if( !defined('WPAMPBUNDLE_ADMIN_INTERFACE') ) {
 			define('WPAMPBUNDLE_ADMIN_INTERFACE', true);

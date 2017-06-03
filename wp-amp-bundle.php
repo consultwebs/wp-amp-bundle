@@ -90,7 +90,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 					add_option('wp_amp_bundle_schema', $this->schema);
 				}
 
-				// Flushes permalinks
+				// Flush permalinks
 				flush_rewrite_rules();
 			}
 
@@ -105,7 +105,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 				delete_option('wp_amp_bundle_schema');
 				delete_option('wp_amp_bundle_version');
 
-				// Flushes permalinks
+				// Flush permalinks
 				flush_rewrite_rules();
 			}
 		}
